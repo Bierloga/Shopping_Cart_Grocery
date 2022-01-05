@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.container {
+  display: grid;
+  grid-template-columns: 15% 35% 35% 15%;
+  grid-template-rows: auto;
+  justify-items: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.shopping-cart {
+  color: black;
+  width: 250px;
+  height: 400px;
+  grid-column-start: 3;
+  text-align: center;
+  padding-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shopping-cart ul {
+  list-style-type: none;
+  width: 200px;
+  margin: auto;
+}
+
+.shopping-cart li {
+  background-color: lightsalmon;
+}
+
+.shopping-cart li:nth-child(even) {
+  background-color:moccasin
+}
+
+.grocery-list {
+color: black;
+width: 250px;
+height: 400px;
+grid-column-start: 2;
+text-align: center;
+padding-top: 20px;
+}
+
+.grocery-list ul {
+  list-style-type: none;
+  width: 200px;
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+.grocery-list li {
+  background-color: lawngreen;
+}
+
+.grocery-list li:nth-child(even){
+  background-color:lightgreen;
+}
+
+.grocery-list h1 {
+  padding: 5px 0px 20px 0px;
+}
+
+.shopping-cart h1 {
+  padding: 5px 0px 20px 0px;
+}
+
+.shopping-cart button {
+  margin: 10px 0px;
+}
+
+.list-item {
+  border: 1px black solid;
+  width: inherit
 }
