@@ -5,7 +5,7 @@ import InputField from "./InputField";
 const GroceryList = (props) => {
     return (
         <span className="grocery-list">
-            <h1>GroceryList</h1>
+            <h1>Grocery List</h1>
             <List itemList={props.itemList} isShoppingCart="false" handleClickGroceryItem={props.handleClickGroceryItem} />
             <InputField addNewGrocery={props.addNewGrocery} />
         </span>

@@ -10,24 +10,47 @@ class Container extends React.Component {
                 { title: "Bread", id: 1 },
                 { title: "Milk", id: 2 },
                 { title: "Eggs", id: 3 },
-                { title: "Coffee", id: 4 }
+                { title: "Coffee", id: 4 },
+                { title: "Beer", id: 5 }
             ],
-            shoppingListItems: []
+            shoppingListItems: [
+                { title: "Beer", id: 5, amount: 2 }
+            ]
         }
         this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this)
         this.emptyCart = this.emptyCart.bind(this)
         this.addNewGrocery = this.addNewGrocery.bind(this)
         this.createID = this.createID.bind(this)
-        // this.quantityCalc = this.quantityCalc.bind(this)
+        this.addAmountToItem = this.addAmountToItem.bind(this)
+    }
+
+    addAmountToItem(item) {
+        this.setState(prevState => {
+            const newList = [...prevState.shoppingListItems];
+            const newestList = newList.map((ob) => {
+                if (item.id === ob.id) {
+                    return { title: ob.title, id: ob.id, amount: (ob.amount + 1) }
+                } else { return ob }
+            });
+            const newState = { ...prevState, shoppingListItems: newestList }
+            return newState
+        })
     }
 
     handleClickGroceryItem(item) {
-        this.setState(prevState => {
-            const newList = [...prevState.shoppingListItems]
-            newList.push(item)
-            const newState = { ...prevState, shoppingListItems: newList }
-            return newState
-        })
+        const newArray = this.state.shoppingListItems.map((item) => item.id)
+        if (newArray.includes(item.id) === false) {
+            const newItem = item
+            newItem.amount = 1
+            this.setState(prevState => {
+                const newList = [...prevState.shoppingListItems]
+                newList.push(newItem)
+                const newState = { ...prevState, shoppingListItems: newList }
+                return newState
+            })
+        } else {
+            this.addAmountToItem(item)
+        }
     }
 
     emptyCart() {

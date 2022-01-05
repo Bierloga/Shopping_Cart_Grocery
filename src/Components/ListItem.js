@@ -4,10 +4,9 @@ const ListItem = ({ item, clickItem, isShoppingCart }) => {
             <li
                 key={item.id}
                 className="list-item"
-                onClick={clickItem}
                 value={item.title}
             >
-                <span>{item.title}</span><span>Amount: {item.amount}</span>
+                <span id="shopping-item">{item.title}</span><span id="shopping-amount">Amount: {item.amount}</span>
             </li>
         );
     } else {
@@ -18,7 +17,7 @@ const ListItem = ({ item, clickItem, isShoppingCart }) => {
                 onClick={clickItem}
                 value={item.title}
             >
-                <span>{item.title}</span>
+                <span id="grocery-item">{item.title}</span>
             </li>
         )
     }

@@ -3,6 +3,21 @@
   padding: 0;
 }
 
+body {
+  background-color: lightgoldenrodyellow;
+}
+
+.header {
+  height: 100px;
+  background-color: sandybrown;
+  border-bottom: 2px solid red;
+}
+
+.header-title {
+  padding-top: 30px;
+  text-align: center;
+}
+
 .container {
   display: grid;
   grid-template-columns: 15% 35% 35% 15%;
@@ -72,5 +87,20 @@ padding-top: 20px;
 
 .list-item {
   border: 1px black solid;
-  width: inherit
+  width: inherit;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+#shopping-item {
+  font-size: 20px;
+}
+
+#shopping-amount {
+  font-size: 14px;
+}
+
+#grocery-item {
+  font-size: 20px;
 }
